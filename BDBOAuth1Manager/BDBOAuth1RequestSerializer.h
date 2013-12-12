@@ -12,6 +12,7 @@
 @interface BDBOAuthToken : NSObject
 <NSCoding, NSCopying>
 
+@property (nonatomic, copy, readonly) NSString *rawResponse;
 @property (nonatomic, copy, readonly) NSString *token;
 @property (nonatomic, copy, readonly) NSString *secret;
 @property (nonatomic, copy)           NSString *verifier;

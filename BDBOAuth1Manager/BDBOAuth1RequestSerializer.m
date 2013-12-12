@@ -17,6 +17,7 @@
 #pragma mark -
 @interface BDBOAuthToken ()
 
+@property (nonatomic, copy) NSString *rawResponse;
 @property (nonatomic, copy, readwrite) NSString *token;
 @property (nonatomic, copy, readwrite) NSString *secret;
 
@@ -58,6 +59,8 @@
 {
     if (!queryString || queryString.length == 0)
         return nil;
+	
+	self.rawResponse = queryString;
 
     NSDictionary *attributes = [NSDictionary dictionaryFromQueryString:queryString];
 
